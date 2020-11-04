@@ -4,7 +4,7 @@
 # Author: Long Chen
 # Description: A script to bulk send RDS cloudwatch data to zabbix server
 
-PATH=$PATH:/opt/zabbix/cloudwatch
+PATH=$PATH:/usr/lib/zabbix/externalscripts
 export PATH
 
 # DB instance indentifier

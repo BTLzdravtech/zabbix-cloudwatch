@@ -68,8 +68,8 @@ class pyZabbixSender:
             'key': key,
             'value': value,
         }
-        if clock:
-            obj['clock'] = clock
+        #if clock:
+            #obj['clock'] = clock
         return obj
 
         

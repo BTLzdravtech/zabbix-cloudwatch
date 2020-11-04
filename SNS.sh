@@ -6,7 +6,7 @@
 # Requires jq command to parse json data
 # JQ download link: http://stedolan.github.io/jq/download/
 
-PATH=$PATH:/opt/zabbix/cloudwatch
+PATH=$PATH:/usr/lib/zabbix/externalscripts
 export PATH
 
 # Prefix component name used for SNS topics discovery

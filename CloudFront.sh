@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# Description: A script to bulk send ApplicationELB cloudwatch data to zabbix server
+# Date:   08/08/2015
+# Author: Long Chen
+# Description: A script to bulk send CloudFront cloudwatch data to zabbix server
 
-PATH=$PATH:/opt/zabbix/cloudwatch
+PATH=$PATH:/usr/lib/zabbix/externalscripts
 export PATH
 
-# Load Balancer Name
-LOAD_BALANCER=$1
+# Distribution Id
+DISTRIBUTION_ID=$1
 # Zabbix Host
 ZABBIX_HOST=$2
 # Zabbix Server
@@ -23,4 +25,4 @@ ENDTIME=$(date -u "+%F %H:%M:00" -d "5 minutes ago")
 STARTTIME=$(date -u "+%F %H:%M:00" -d "10 minutes ago")
 
 # Send cloudwatch data of a table to Zabbix Server
-zabbixCloudWatch.py -z "$ZABBIX_SERVER" -x "$ZABBIX_HOST" -a "$ACCOUNT" -r "$REGION" -s "ApplicationELB" -d "LoadBalancer=$LOAD_BALANCER" -p "$PERIOD" -f "$STARTTIME" -t "$ENDTIME"
+zabbixCloudWatch.py -z "$ZABBIX_SERVER" -x "$ZABBIX_HOST" -a "$ACCOUNT" -r "$REGION" -s "CloudFront" -d "DistributionId=$DISTRIBUTION_ID" -p "$PERIOD" -f "$STARTTIME" -t "$ENDTIME"

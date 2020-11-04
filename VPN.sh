@@ -2,7 +2,7 @@
 
 # Description: A script to bulk send VPN cloudwatch data to zabbix server
 
-PATH=$PATH:/opt/zabbix/cloudwatch
+PATH=$PATH:/usr/lib/zabbix/externalscripts
 export PATH
 
 # VPN indentifier
